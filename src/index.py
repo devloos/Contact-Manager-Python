@@ -1,8 +1,30 @@
 import json
 import sys
+import utils
 from models.Database import Database
 from models.Options import MainOption
-from utils import mainMenuInput
+from models.Options import RemoveOption
+from models.Contact import Contact
+
+
+def removeMenu(db: Database):
+    while True:
+        try:
+            userInput = int(utils.removeMenuInput())
+            option = RemoveOption(userInput)
+        except ValueError:
+            print("Invalid option try again!\n")
+            continue
+
+        if option == RemoveOption.Name:
+            strOption = "Phone Number: "
+        elif option == RemoveOption.Email:
+            strOption = "Email: "
+        elif option == RemoveOption.PhoneNumber:
+            strOption = "Phone Number: "
+
+        userInput = input(strOption)
+
 
 filename = "config.json"
 
@@ -39,19 +61,31 @@ while wrongPassword:
 
 db = Database()
 
-contacts = db.readCSV()
-
 print()
 
 while True:
     try:
-        userInput = int(mainMenuInput())
+        userInput = int(utils.mainMenuInput())
         option = MainOption(userInput)
     except ValueError:
         print("Invalid option try again!\n")
         continue
 
-    if option == MainOption.Exit:
+    if option == MainOption.List:
+        utils.printContacts(db.getContacts())
+
+    elif option == MainOption.Add:
+        contact = Contact()
+        contact.setName(input("Name: "))
+        contact.setPhoneNumber(input("Phone Number: "))
+        contact.setEmail(input("Email: "))
+        contact.setRelationship(input("Relationship: "))
+        db.addContact(contact)
+
+    elif option == MainOption.Remove:
+        removeMenu()
+
+    else:
         break
 
 file.close()

@@ -1,3 +1,6 @@
+from models.Contact import Contact
+
+
 def mainMenuInput() -> str:
     print("1. List Contacts")
     print("2. Add Contact")
@@ -6,3 +9,18 @@ def mainMenuInput() -> str:
 
     result = input("Option: ")
     return result
+
+
+def removeMenuInput() -> str:
+    print("1. Remove by name")
+    print("2. Remove by phone number")
+    print("3. Remove by email")
+
+    result = input("Option: ")
+    return result
+
+
+def printContacts(contacts: list[Contact]):
+    for contact in contacts:
+        contact.printContent()
+        print()

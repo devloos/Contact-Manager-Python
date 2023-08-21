@@ -30,3 +30,9 @@ class Contact:
 
     def getRelationship(self) -> str:
         return self.relationship
+
+    def printContent(self):
+        print(f"Name: {self.name}")
+        print(f"Phone Number: {self.phoneNumber}")
+        print(f"Email: {self.email}")
+        print(f"Relationship: {self.relationship}")

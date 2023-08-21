@@ -3,11 +3,9 @@ from .Contact import Contact
 
 
 class Database:
-    def __init__(self) -> None:
-        pass
+    contacts: list[Contact] = []
 
-    def readCSV(self) -> list[Contact]:
-        contacts: list[Contact] = []
+    def __init__(self) -> None:
         df = pd.read_csv("index.csv")
 
         for index in df.index:
@@ -16,6 +14,18 @@ class Database:
             contact.setPhoneNumber(df["Phone Number"][index])
             contact.setEmail(df["Email"][index])
             contact.setRelationship(df["Relationship"][index])
-            contacts.append(contact)
+            self.contacts.append(contact)
 
-        return contacts
+    def getContacts(self) -> list[Contact]:
+        return self.contacts
+
+    def addContact(self, contact: Contact):
+        self.contacts.append(contact)
+        obj = {
+            "Name": [contact.getName()],
+            "Phone Number": [contact.getPhoneNumber()],
+            "Email": [contact.getEmail()],
+            "Relationship": [contact.getRelationship()],
+        }
+        df = pd.DataFrame(obj)
+        df.to_csv("index.csv", mode="a", index=False, header=False)
