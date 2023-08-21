@@ -19,14 +19,14 @@ def removeMenu(db: Database):
         column = ""
         inputLabel = ""
         if option == RemoveOption.Name:
-            inputLabel = "Phone Number: "
+            inputLabel = "Name: "
             column = "Name"
-        elif option == RemoveOption.Email:
-            inputLabel = "Email: "
-            column = "Email"
-        else:
+        elif option == RemoveOption.PhoneNumber:
             inputLabel = "Phone Number: "
             column = "Phone Number"
+        else:
+            inputLabel = "Email: "
+            column = "Email"
 
         removeInput = input(inputLabel)
 
@@ -97,7 +97,8 @@ while True:
         db.addContact(contact)
 
     elif option == MainOption.Remove:
-        removeMenu()
+        print()
+        removeMenu(db)
 
     else:
         break

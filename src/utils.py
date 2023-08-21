@@ -14,7 +14,7 @@ def mainMenuInput() -> str:
 def removeMenuInput() -> str:
     print("1. Remove by name")
     print("2. Remove by phone number")
-    print("3. Remove by email")
+    print("3. Remove by email\n")
 
     result = input("Option: ")
     return result

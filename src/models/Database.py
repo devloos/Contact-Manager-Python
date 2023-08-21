@@ -32,5 +32,11 @@ class Database:
         df = pd.DataFrame(obj)
         df.to_csv("index.csv", mode="a", index=False, header=False)
 
-    def removeContact(self, removeInput: str, column: str):
-        self.df.loc[self.df[column] == removeInput]
+    def removeContact(self, removeInput: str, column: str) -> str | None:
+        localDf = self.df.loc[self.df[column] == removeInput]
+
+        if localDf.empty:
+            return None
+        else:
+            localDf.drop(localDf.index, inplace=True)
+            return "Dropped!"
