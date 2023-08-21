@@ -1,11 +1,8 @@
-from Relationship import Relationship
-
-
 class Contact:
     name: str
     phoneNumber: str
     email: str
-    relationship: Relationship
+    relationship: str
 
     def __init__(self) -> None:
         pass
@@ -28,8 +25,8 @@ class Contact:
     def getEmail(self) -> str:
         return self.email
 
-    def setRelationship(self, relationship: Relationship) -> None:
+    def setRelationship(self, relationship: str) -> None:
         self.relationship = relationship
 
-    def getRelationship(self) -> Relationship:
+    def getRelationship(self) -> str:
         return self.relationship

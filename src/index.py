@@ -1,6 +1,6 @@
 import json
 import sys
-from utils import mainMenuInput
+from models.Database import Database
 
 filename = "config.json"
 
@@ -35,9 +35,10 @@ while passwordIncorrect:
     else:
         passwordIncorrect = False
 
+db = Database()
 
-result = mainMenuInput()
+contacts = db.readCSV()
 
-print(result)
+print(contacts)
 
 file.close()
