@@ -16,14 +16,28 @@ def removeMenu(db: Database):
             print("Invalid option try again!\n")
             continue
 
+        column = ""
+        inputLabel = ""
         if option == RemoveOption.Name:
-            strOption = "Phone Number: "
+            inputLabel = "Phone Number: "
+            column = "Name"
         elif option == RemoveOption.Email:
-            strOption = "Email: "
-        elif option == RemoveOption.PhoneNumber:
-            strOption = "Phone Number: "
+            inputLabel = "Email: "
+            column = "Email"
+        else:
+            inputLabel = "Phone Number: "
+            column = "Phone Number"
 
-        userInput = input(strOption)
+        removeInput = input(inputLabel)
+
+        result = db.removeContact(removeInput, column)
+
+        if result == None:
+            print("No user found!")
+        else:
+            print(result)
+
+        break
 
 
 filename = "config.json"
