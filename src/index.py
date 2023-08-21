@@ -1,5 +1,6 @@
 import json
 import sys
+from utils import mainMenuInput
 
 filename = "config.json"
 
@@ -34,5 +35,9 @@ while passwordIncorrect:
     else:
         passwordIncorrect = False
 
+
+result = mainMenuInput()
+
+print(result)
 
 file.close()
