@@ -1,20 +1,20 @@
-import enum
+from enum import Enum
 
 
-class MainMenu(enum):
+class MainOption(Enum):
     List = 1
     Add = 2
     Remove = 3
     Exit = 4
 
 
-class RemoveMenu(enum):
+class RemoveOption(Enum):
     Name = 1
     PhoneNumber = 2
     Email = 3
 
 
-class SortMenu(enum):
+class SortOption(Enum):
     Name = 1
     Email = 2
     Relationship = 3

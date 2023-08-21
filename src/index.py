@@ -1,6 +1,8 @@
 import json
 import sys
 from models.Database import Database
+from models.Options import MainOption
+from utils import mainMenuInput
 
 filename = "config.json"
 
@@ -24,21 +26,32 @@ except (IOError, ValueError):
 
 print(f"Hey {obj['user']}!\n")
 
-passwordIncorrect = True
+wrongPassword = True
 
 # repeat until correct password
-while passwordIncorrect:
+while wrongPassword:
     password = input("Please enter password: ")
 
     if obj["password"] != password:
         print("Wrong password try again!\n")
     else:
-        passwordIncorrect = False
+        wrongPassword = False
 
 db = Database()
 
 contacts = db.readCSV()
 
-print(contacts)
+print()
+
+while True:
+    try:
+        userInput = int(mainMenuInput())
+        option = MainOption(userInput)
+    except ValueError:
+        print("Invalid option try again!\n")
+        continue
+
+    if option == MainOption.Exit:
+        break
 
 file.close()

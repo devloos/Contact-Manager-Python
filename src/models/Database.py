@@ -1,13 +1,13 @@
 import pandas as pd
-from Contact import Contact
+from .Contact import Contact
 
 
 class Database:
     def __init__(self) -> None:
         pass
 
-    def readCSV(self) -> [Contact]:
-        contacts = [Contact]
+    def readCSV(self) -> list[Contact]:
+        contacts: list[Contact] = []
         df = pd.read_csv("index.csv")
 
         for index in df.index:
