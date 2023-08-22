@@ -32,6 +32,8 @@ class Database:
             "Email": [contact.getEmail()],
             "Relationship": [contact.getRelationship()],
         }
+
+        # create new DataFrame and append it to file hence mode="a"
         df = pd.DataFrame(obj)
         df.to_csv("index.csv", mode="a", index=False, header=False)
 
@@ -52,3 +54,8 @@ class Database:
                 result += localDf["Name"][index]
 
             return result + "!"
+
+    def sortByName(self):
+        self.contacts.sort(key=lambda el: el.getName())
+        self.df = self.df.sort_values(by=["Name"], ascending=True)
+        self.df.to_csv("index.csv", index=False)
