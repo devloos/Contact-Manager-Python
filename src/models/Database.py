@@ -4,6 +4,8 @@ from .Contact import Contact
 
 
 class Database:
+    # Maintaining a copy of contacts since it would be expensive to go through
+    # DataFrame and computing it every access
     contacts: list[Contact] = []
     df: DataFrame
 
@@ -21,6 +23,7 @@ class Database:
     def getContacts(self) -> list[Contact]:
         return self.contacts
 
+    # take contact append it to contacts and update csv
     def addContact(self, contact: Contact):
         self.contacts.append(contact)
         obj = {
@@ -32,11 +35,20 @@ class Database:
         df = pd.DataFrame(obj)
         df.to_csv("index.csv", mode="a", index=False, header=False)
 
+    # remove contact based on column and input
     def removeContact(self, removeInput: str, column: str) -> str | None:
+        # using local DataFrame snapshot to grab rows that passed condition
         localDf = self.df.loc[self.df[column] == removeInput]
 
         if localDf.empty:
             return None
         else:
-            localDf.drop(localDf.index, inplace=True)
-            return "Dropped!"
+            self.df.drop(localDf.index, inplace=True)
+            self.df.to_csv("index.csv", index=False)
+
+            # cant use join unfortunately since its under localDf.index
+            result = "Dropped "
+            for index in localDf.index:
+                result += localDf["Name"][index]
+
+            return result + "!"

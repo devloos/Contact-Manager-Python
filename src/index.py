@@ -7,6 +7,16 @@ from models.Options import RemoveOption
 from models.Contact import Contact
 
 
+REMOVE_OPTION_MAPPING = {
+    RemoveOption.Name: {
+        "label": "Name: ",
+        "column": "Name",
+    },
+    RemoveOption.PhoneNumber: {"label": "Phone Number: ", "column": "Phone Number"},
+    RemoveOption.Email: {"label": "Email: ", "column": "Email"},
+}
+
+
 def removeMenu(db: Database):
     while True:
         try:
@@ -16,27 +26,16 @@ def removeMenu(db: Database):
             print("Invalid option try again!\n")
             continue
 
-        column = ""
-        inputLabel = ""
-        if option == RemoveOption.Name:
-            inputLabel = "Name: "
-            column = "Name"
-        elif option == RemoveOption.PhoneNumber:
-            inputLabel = "Phone Number: "
-            column = "Phone Number"
-        else:
-            inputLabel = "Email: "
-            column = "Email"
+        removeInput = input(REMOVE_OPTION_MAPPING[option]["label"])
 
-        removeInput = input(inputLabel)
-
-        result = db.removeContact(removeInput, column)
+        result = db.removeContact(removeInput, REMOVE_OPTION_MAPPING[option]["column"])
 
         if result == None:
             print("No user found!")
         else:
             print(result)
 
+        print()
         break
 
 

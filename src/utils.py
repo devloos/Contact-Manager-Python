@@ -12,9 +12,9 @@ def mainMenuInput() -> str:
 
 
 def removeMenuInput() -> str:
-    print("1. Remove by name")
-    print("2. Remove by phone number")
-    print("3. Remove by email\n")
+    print("1. Remove by Name")
+    print("2. Remove by Phone Number")
+    print("3. Remove by Email\n")
 
     result = input("Option: ")
     return result
