@@ -14,6 +14,39 @@
 - Establish enums to effectively manage various menu options.
 - Abstract utility functions into a dedicated file if they are deemed necessary.
 
+### Installation
+
+#### Windows:
+
+1. Visit the [Python official website](https://www.python.org/downloads/).
+2. Download the latest Python installer for Windows.
+3. Run the installer and check the "Add Python to PATH" option.
+4. Follow the installation prompts.
+
+#### Mac:
+
+1. Open the Terminal application.
+2. Install Homebrew if not already installed (paste in Terminal):
+   ```
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+3. Install Python using Homebrew (paste in Terminal):
+   ```
+   brew install python
+   ```
+
+#### Linux (Debian-based, e.g., Ubuntu):
+
+1. Open the Terminal.
+2. Update package lists (paste in Terminal):
+   ```
+   sudo apt update
+   ```
+3. Install Python (paste in Terminal):
+   ```
+   sudo apt install python3
+   ```
+
 ### Example Output
 
 ```
