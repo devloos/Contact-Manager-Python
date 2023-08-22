@@ -1,4 +1,7 @@
-class Contact:
+from .BaseModel import BaseModel
+
+
+class Contact(BaseModel):
     name: str
     phoneNumber: str
     email: str
@@ -6,6 +9,13 @@ class Contact:
 
     def __init__(self) -> None:
         pass
+
+    # overriding abstract method
+    def printModel(self):
+        print(f"Name: {self.name}")
+        print(f"Phone Number: {self.phoneNumber}")
+        print(f"Email: {self.email}")
+        print(f"Relationship: {self.relationship}")
 
     def setName(self, name: str) -> None:
         self.name = name
@@ -30,9 +40,3 @@ class Contact:
 
     def getRelationship(self) -> str:
         return self.relationship
-
-    def printContent(self):
-        print(f"Name: {self.name}")
-        print(f"Phone Number: {self.phoneNumber}")
-        print(f"Email: {self.email}")
-        print(f"Relationship: {self.relationship}")

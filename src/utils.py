@@ -22,5 +22,5 @@ def removeMenuInput() -> str:
 
 def printContacts(contacts: list[Contact]):
     for contact in contacts:
-        contact.printContent()
+        contact.printModel()
         print()

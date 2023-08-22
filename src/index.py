@@ -7,6 +7,7 @@ from models.Options import RemoveOption
 from models.Contact import Contact
 
 
+# Alternative to using if statements
 REMOVE_OPTION_MAPPING = {
     RemoveOption.Name: {
         "label": "Name: ",
@@ -76,6 +77,7 @@ db = Database()
 
 print()
 
+# main loop
 while True:
     try:
         userInput = int(utils.mainMenuInput())
@@ -94,6 +96,7 @@ while True:
         contact.setEmail(input("Email: "))
         contact.setRelationship(input("Relationship: "))
         db.addContact(contact)
+        print()
 
     elif option == MainOption.Remove:
         print()
