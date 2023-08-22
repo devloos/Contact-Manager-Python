@@ -1,3 +1,13 @@
+## Project Overview
+
+> This Python project aims to create a Contact Manager that covers essential concepts in Python. These include working with Complex Data Structures, implementing Object-Oriented Programming principles, handling Read and Write operations to disk, and gaining proficiency in code modularization techniques.
+
+### Requirements
+
+> In addition to replicating the provided sample output, specific guidelines pertain to the organization of your code and your interaction with files. You are expected to simulate a Database by utilizing a CSV file, which is exemplified within the "db" folder. This CSV file will serve as the means to read from and write to your contacts, ensuring that any contacts created in previous program executions are retained in subsequent runs.
+
+> While it's not mandatory to generate distinct profiles containing varied contacts, you will need to extract information from a `config.json` file. This JSON file consists of two properties: `Name` and `Password`. Upon launching your program, these properties will be employed to greet the user and prompt them to input a password.
+
 ### Example Output
 
 ```
