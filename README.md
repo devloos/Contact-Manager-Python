@@ -8,6 +8,12 @@
 
 > While it's not mandatory to generate distinct profiles containing varied contacts, you will need to extract information from a `config.json` file. This JSON file consists of two properties: `Name` and `Password`. Upon launching your program, these properties will be employed to greet the user and prompt them to input a password.
 
+- Implement comprehensive error handling for all potential errors.
+- Develop a Database class responsible for managing all interactions involving the CSV file.
+- Design a Contact class that inherits from a BaseModel class and implements an abstract method.
+- Establish enums to effectively manage various menu options.
+- Abstract utility functions into a dedicated file if they are deemed necessary.
+
 ### Example Output
 
 ```
