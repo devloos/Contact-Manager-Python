@@ -1,4 +1,5 @@
 import pandas as pd
+import sys
 from pandas import DataFrame
 from .Contact import Contact
 
@@ -10,15 +11,21 @@ class Database:
     df: DataFrame
 
     def __init__(self) -> None:
-        self.df = pd.read_csv("index.csv")
+        try:
+            self.df = pd.read_csv("db/contacts.csv")
 
-        for index in self.df.index:
-            contact = Contact()
-            contact.setName(self.df["Name"][index])
-            contact.setPhoneNumber(self.df["Phone Number"][index])
-            contact.setEmail(self.df["Email"][index])
-            contact.setRelationship(self.df["Relationship"][index])
-            self.contacts.append(contact)
+            for index in self.df.index:
+                contact = Contact()
+                contact.setName(self.df["Name"][index])
+                contact.setPhoneNumber(self.df["Phone Number"][index])
+                contact.setEmail(self.df["Email"][index])
+                contact.setRelationship(self.df["Relationship"][index])
+                self.contacts.append(contact)
+        except (IOError, ValueError):
+            print()
+            print("Database file not found!")
+            print('File should be placed under the "db" folder.')
+            sys.exit(1)
 
     def getContacts(self) -> list[Contact]:
         return self.contacts

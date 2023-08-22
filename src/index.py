@@ -42,7 +42,7 @@ def removeMenu(db: Database):
 
 # STARTING POINT
 try:
-    filename = "config.json"
+    filename = "config/config.json"
 
     try:
         file = open(filename)
