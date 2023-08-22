@@ -16,14 +16,16 @@
 
 ### Installation
 
-#### Windows:
+#### Python
+
+##### Windows:
 
 1. Visit the [Python official website](https://www.python.org/downloads/).
 2. Download the latest Python installer for Windows.
 3. Run the installer and check the "Add Python to PATH" option.
 4. Follow the installation prompts.
 
-#### Mac:
+##### Mac:
 
 1. Open the Terminal application.
 2. Install Homebrew if not already installed (paste in Terminal):
@@ -35,7 +37,7 @@
    brew install python
    ```
 
-#### Linux (Debian-based, e.g., Ubuntu):
+##### Linux (Debian-based, e.g., Ubuntu):
 
 1. Open the Terminal.
 2. Update package lists (paste in Terminal):
@@ -45,6 +47,26 @@
 3. Install Python (paste in Terminal):
    ```
    sudo apt install python3
+   ```
+
+#### Repository Setup
+
+1. Open the Terminal.
+2. Clone repository:
+   ```
+   git clone https://github.com/devloos/Robotics-Python-Project.git
+   ```
+3. Change directories into Robotics-Python-Project:
+   ```
+   cd Robotics-Python-Project
+   ```
+4. Download necessary packages:
+   ```
+   pip install -r requirements.txt
+   ```
+5. Run program:
+   ```
+   python3 src/index.py
    ```
 
 ### Example Output
