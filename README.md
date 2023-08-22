@@ -1,48 +1,51 @@
-### Program Flow
+### Example Output
 
 ```
-Hey Carlos!
+Hey Bob!
 
 Please enter password: panda123
 
 1. List Contacts
 2. Add Contact
 3. Remove Contact
-4. Exit
+4. Sort Contacts by Name
+5. Exit
 
 Option: 1
 
-Name: Carlos Aguilera
-Phone Number: 949973127
-Email: carlos@ethika.com
-Relationship: Me
+Name: Guillermo Beste
+Phone Number: 856-346-2331
+Email: gbesteqd@wordpress.com
+Relationship: Uncle
 
-Name: Kirian Aguilera
-Phone Number: 9495453765
-Email: kirian@ethika.com
-Relationship: Wife
+Name: Benny Sleath
+Phone Number: 676-865-7290
+Email: bsleathqe@cbc.ca
+Relationship: Friend
 
-Name: Connor Darling
-Phone Number: 9493232112
-Email: connor@ethika.com
-Relationship: Books
+Name: Cheston Bertelmot
+Phone Number: 373-901-9106
+Email: cbertelmotqf@cbsnews.com
+Relationship: Neighbor
 
 1. List Contacts
 2. Add Contact
 3. Remove Contact
-4. Exit
+4. Sort Contacts by Name
+5. Exit
 
 Option: 2
 
-Name: Max Rehm
-Phone Number: 9491232323
-Email: max@ethika.com
-Relationship: Fisher
+Name: Dacy Prott
+Phone Number: 987-699-7815
+Email: dprottqg@nasa.gov
+Relationship: Aunt
 
 1. List Contacts
 2. Add Contact
 3. Remove Contact
-4. Exit
+4. Sort Contacts by Name
+5. Exit
 
 Option: 3
 
@@ -52,14 +55,48 @@ Option: 3
 
 Option: 3
 
-Email: max@ethika.com
+Email: dprottqg@nasa.gov
 
-Contact Max Rehm has been removed.
+Dropped Dacy Prott!
 
 1. List Contacts
 2. Add Contact
 3. Remove Contact
-4. Exit
+4. Sort Contacts by Name
+5. Exit
 
 Option: 4
+
+Sorted by Name!
+
+1. List Contacts
+2. Add Contact
+3. Remove Contact
+4. Sort Contacts by Name
+5. Exit
+
+Option: 1
+
+Name: Benny Sleath
+Phone Number: 676-865-7290
+Email: bsleathqe@cbc.ca
+Relationship: Friend
+
+Name: Cheston Bertelmot
+Phone Number: 373-901-9106
+Email: cbertelmotqf@cbsnews.com
+Relationship: Neighbor
+
+Name: Guillermo Beste
+Phone Number: 856-346-2331
+Email: gbesteqd@wordpress.com
+Relationship: Uncle
+
+1. List Contacts
+2. Add Contact
+3. Remove Contact
+4. Sort Contacts by Name
+5. Exit
+
+Option: 5
 ```

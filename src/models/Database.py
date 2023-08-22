@@ -12,7 +12,7 @@ class Database:
 
     def __init__(self) -> None:
         try:
-            self.df = pd.read_csv("db/contacts.csv")
+            self.df = pd.read_csv("db/example.csv")
 
             for index in self.df.index:
                 contact = Contact()
