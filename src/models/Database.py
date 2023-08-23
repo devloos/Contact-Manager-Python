@@ -53,7 +53,7 @@ class Database:
             return None
         else:
             self.df.drop(localDf.index, inplace=True)
-            self.df.to_csv("index.csv", index=False)
+            self.df.to_csv("db/example.csv", index=False)
 
             # cant use join unfortunately since its under localDf.index
             result = "Dropped "
@@ -65,4 +65,4 @@ class Database:
     def sortByName(self):
         self.contacts.sort(key=lambda el: el.getName())
         self.df = self.df.sort_values(by=["Name"], ascending=True)
-        self.df.to_csv("index.csv", index=False)
+        self.df.to_csv("db/example.csv", index=False)
